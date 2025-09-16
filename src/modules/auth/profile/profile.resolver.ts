@@ -1,7 +1,7 @@
 import { Args, Mutation, Query, Resolver } from '@nestjs/graphql';
 import { ProfileService } from './profile.service';
 import * as Upload from 'graphql-upload/Upload.js'
-import * as GraphQlUpload from 'graphql-upload/GraphQlUpload.js'
+import GraphQLUpload from 'graphql-upload/GraphQLUpload.js'
 import { Authorized } from '@/src/shared/decorators/authorized.decorator';
 import type { User } from '@/prisma/generated';
 import { Authorization } from '@/src/shared/decorators/auth.decorator';
@@ -18,7 +18,7 @@ export class ProfileResolver {
   @Mutation(() => Boolean, {name: 'changeProfileAvatar'})
   public async changeAvatar(
     @Authorized() user: User,
-    @Args('avatar', {type: () => GraphQlUpload}, FileValidationPipe) avatar: Upload
+    @Args('avatar', {type: () => GraphQLUpload}, FileValidationPipe) avatar: Upload
   ) {
     return this.profileService.changeAvatar(user, avatar)
   }

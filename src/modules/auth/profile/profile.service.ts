@@ -2,7 +2,7 @@ import { PrismaService } from '@/src/core/prisma/prisma.service';
 import { ConflictException, Injectable } from '@nestjs/common';
 import { StorageService } from '../../libs/storage/storage.service';
 import { SocialLink, User } from '@/prisma/generated';
-import * as sharp from 'sharp'
+import sharp from 'sharp'
 import * as Upload from 'graphql-upload/Upload.js'
 import { ChangeProfileInfoInput } from './inputs/change-profile-info.input';
 import { SocialLinkInput, SocialLinkOrderInput } from './inputs/social-link.input';

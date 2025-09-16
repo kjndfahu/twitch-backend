@@ -30,7 +30,9 @@ export class CronService {
 		for(const user of deactivatedAccounts){
 			await this.mailService.sendAccountDeletion(user.email)
 
-			this.storageService.remove(user.avatar)
+			if(user.avatar) {
+				this.storageService.remove(user.avatar)
+			}
 		}
 
 		await this.prismaService.user.deleteMany({

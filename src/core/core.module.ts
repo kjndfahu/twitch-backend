@@ -18,6 +18,7 @@ import { DeactivateModule } from '../modules/auth/deactivate/deactivate.module'
 import { CronModule } from '../modules/cron/cron.module'
 import { StorageModule } from '../modules/libs/storage/storage.module'
 import { ProfileModule } from '../modules/auth/profile/profile.module'
+import { StreamModule } from '../modules/stream/stream.module'
 
 @Module({
 	imports: [
@@ -42,7 +43,8 @@ import { ProfileModule } from '../modules/auth/profile/profile.module'
 		CronModule,
 		StorageModule,
 		ProfileModule,
-		DeactivateModule
+		DeactivateModule,
+		StreamModule
 	]
 })
 export class CoreModule {}
